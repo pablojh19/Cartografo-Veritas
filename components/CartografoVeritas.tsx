@@ -913,7 +913,7 @@ export default function CartografoVeritas() {
               ))}
               {aiLoading && (
                 <div style={{ display: "flex", justifyContent: "flex-start" }}>
-                  <div style={{ padding: "14px 18px", border: "1px solid #111", borderLeft: "2px solid #C8102E" }} 
+                  <div style={{ padding: "14px 18px", border: "1px solid #111", borderLeft: "2px solid #C8102E" }}>
                     {lang === "es" ? "PROCESANDO..." : "PROCESSING..."}
                   </div>
                 </div>
