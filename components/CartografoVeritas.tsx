@@ -298,7 +298,7 @@ export default function CartografoVeritas() {
     CATEGORIES.forEach(c => { a[c.id] = c.articles; });
     return a;
   });
-  const messagesEnd = useRef(null);
+  const messagesEnd = useRef<HTMLDivElement>(null);
   const t = LANG[lang];
   const aiModes = AI_MODES_DATA[lang];
 
