@@ -281,13 +281,13 @@ const AI_MODES_DATA = {
 };
 
 export default function CartografoVeritas() {
-  const [lang, setLang] = useState("es");
-  const [view, setView] = useState("home");
-  const [activeCategory, setActiveCategory] = useState(null);
-  const [activeArticle, setActiveArticle] = useState(null);
+  const [lang, setLang] = useState<"es"|"en">("es");
+  const [view, setView] = useState<string>("home");
+  const [activeCategory, setActiveCategory] = useState<any>(null);
+  const [activeArticle, setActiveArticle] = useState<any>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [aiMode, setAiMode] = useState(0);
-  const [aiMessages, setAiMessages] = useState([]);
+  const [aiMessages, setAiMessages] = useState<{role:string,content:string}[]>([]);
   const [aiInput, setAiInput] = useState("");
   const [aiLoading, setAiLoading] = useState(false);
   const [bookSearch, setBookSearch] = useState("");
