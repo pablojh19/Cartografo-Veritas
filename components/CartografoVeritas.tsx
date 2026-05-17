@@ -312,16 +312,11 @@ export default function CartografoVeritas() {
     setAiInput("");
     setAiLoading(true);
     try {
-      const res = await fetch("/api/ai", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 1000,
-          system: aiModes[aiMode].system,
-          messages: newMsgs
-        })
-      });
+     const res = await fetch("/api/ai", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ messages: newMsgs, systemPrompt: aiModes[aiMode].system })
+        });
       const data = await res.json();
       const reply = data.content?.find(b => b.type === "text")?.text || "Error.";
       setAiMessages([...newMsgs, { role: "assistant", content: reply }]);
