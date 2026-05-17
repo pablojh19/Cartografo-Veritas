@@ -318,7 +318,7 @@ export default function CartografoVeritas() {
           body: JSON.stringify({ messages: newMsgs, systemPrompt: aiModes[aiMode].system })
         });
       const data = await res.json();
-      const reply = data.content?.find(b => b.type === "text")?.text || "Error.";
+      const reply = data.text || "Error.";
       setAiMessages([...newMsgs, { role: "assistant", content: reply }]);
     } catch {
       setAiMessages([...newMsgs, { role: "assistant", content: "Error de conexión." }]);
