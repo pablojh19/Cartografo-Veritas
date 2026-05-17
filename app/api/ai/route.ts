@@ -14,9 +14,12 @@ export async function POST(req: NextRequest) {
       max_tokens: 1000,
       system: systemPrompt,
       messages,
-    }),
+    })
   })
   const data = await response.json()
+  if (!response.ok) {
+    return NextResponse.json({ error: JSON.stringify(data) }, { status: 500 })
+  }
   const text = data.content?.find((b: any) => b.type === 'text')?.text || 'Error.'
   return NextResponse.json({ text })
 }
