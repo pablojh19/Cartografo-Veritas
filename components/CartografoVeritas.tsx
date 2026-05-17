@@ -332,7 +332,7 @@ export default function CartografoVeritas() {
   };
 
   const allArticles = Object.values(articles).flat();
-const genres = ["All", ...Array.from(new Set(BOOKS.map(b => b.genre)))];
+  const genres = ["All", ...Array.from(new Set(BOOKS.map(b => b.genre)))];
   const filteredBooks = BOOKS.filter(b =>
     (bookGenre === "All" || b.genre === bookGenre) &&
     (b.title.toLowerCase().includes(bookSearch.toLowerCase()) || b.author.toLowerCase().includes(bookSearch.toLowerCase()))
