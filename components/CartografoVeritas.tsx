@@ -304,7 +304,7 @@ export default function CartografoVeritas() {
 
   useEffect(() => { messagesEnd.current?.scrollIntoView({ behavior: "smooth" }); }, [aiMessages]);
 
-  const sendAi = async (text) => {
+  const sendAi = async (text?: string) => {
     const msg = text || aiInput.trim();
     if (!msg) return;
     const newMsgs = [...aiMessages, { role: "user", content: msg }];
