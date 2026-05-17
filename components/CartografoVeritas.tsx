@@ -926,8 +926,8 @@ export default function CartografoVeritas() {
                 onKeyDown={e => e.key === "Enter" && !e.shiftKey && sendAi()}
                 placeholder={lang === "es" ? `Pregunta sobre ${aiModes[aiMode].label.toLowerCase()}...` : `Ask about ${aiModes[aiMode].label.toLowerCase()}...`} />
               <button onClick={() => sendAi()} style={{ fontFamily: "Space Mono, monospace", fontSize: "0.6rem", letterSpacing: "0.12em", padding: "10px 24px", background: "transparent", border: "1px solid #C8102E", color: "#C8102E", cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.2s" }}
-                onMouseEnter={e => { e.target.style.background = "#C8102E"; e.target.style.color = "#fff"; }}
-                onMouseLeave={e => { e.target.style.background = "transparent"; e.target.style.color = "#C8102E"; }}>
+                onMouseEnter={e => { (e.target as HTMLElement).style.background = "#C8102E"; (e.target as HTMLElement).style.color = "#fff"; }}
+                onMouseLeave={e => { (e.target as HTMLElement).style.background = "transparent"; (e.target as HTMLElement).style.color = "#C8102E"; }}>
                 {t.send} →
               </button>
             </div>
