@@ -913,7 +913,7 @@ export default function CartografoVeritas() {
               ))}
               {aiLoading && (
                 <div style={{ display: "flex", justifyContent: "flex-start" }}>
-                  <div style={{ padding: "14px 18px", border: "1px solid #111", borderLeft: "2px solid #C8102E" }} className="cv-mono" style={{ fontSize: "0.55rem", color: "#333", letterSpacing: "0.15em" }}>
+                  <div style={{ padding: "14px 18px", border: "1px solid #111", borderLeft: "2px solid #C8102E" }} 
                     {lang === "es" ? "PROCESANDO..." : "PROCESSING..."}
                   </div>
                 </div>
